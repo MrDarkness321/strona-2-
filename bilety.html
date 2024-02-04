@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Park Rozrywki - Lunapark</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header style="color: #f86909; ">
+    <h1>Lunapark </h1>
+    <nav>
+      <ul>
+        <li><a href="park rozrywki.html">    STRONA GŁÓWNA</a></li>
+        <li><a href="cennik.html">CENNIK</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+  <section id="bilety">
+    <h2>Kup bilety online </h2><center>
+      <div class="bilety-grid">
+      <div class="bilety">
+            
+        <h3>Bilet jednodniowy</h3>
+        <p>Bilet ważny 90 dni od daty zakupu. Kupując bilet do Lunapark, zyskujesz nielimitowany dostęp do atrakcji Miasta Przygód </p><br><br>
+        <h3>Cena: 149,99 PLN</h3><br>
+        <form >
+          Ilość biletów:
+          <input type="number" id="ilosc_biletow1" name="ilosc_biletow" min="1" ><br><br>
+      </form>
+      </div>
+      <div class="bilety">
+        
+        <h3>          Bilet prezentowy
+        </h3>
+        <p>
+          
+          Bilet elektroniczny ważny 180 dni od daty zakupu. Kupując bilet do Lunapark, zyskujesz nielimitowany dostęp do atrakcji Miasta Przygód
+        </p><br><br>
+        <h3>Cena: 159,99 PLN</h3><br>
+        <form >
+          Ilość biletów:
+          <input type="number" id="ilosc_biletow2" name="ilosc_biletow" min="1" ><br><br>
+      </form>
+      </div>
+      <div class="bilety">
+        
+        <h3>          Bilet ulogowy
+        </h3>
+        <p>
+          
+          Bilet  ważny 90 dni od daty zakupu. Kupując bilet do Lunapark, zyskujesz nielimitowany dostęp do atrakcji Miasta Przygód. Bilet ten przysługuje tylko dzieciom do lat 15
+        </p><br><br>
+        <h3>Cena: 89,99 PLN</h3><br>
+        <form >
+          Ilość biletów:
+          <input type="number" id="ilosc_biletow3" name="ilosc_biletow" min="1" ><br><br>
+      </form>
+      </div>
+      
+      </div><br><br>
+      <input type="button" class="button" value="Dodaj do zamówienia" onclick="fun()">
+  <br><br>
+      <p id="p1"></p>
+  <br><br>
+  <p ><h3>Wypełnij formularz, aby dokonać zakupu biletów</h3></p>
+    <form    method="post">
+      <h4>Imię:</h4>
+      <input type="text" id="imie" name="imie" required><br>
+  
+      <h4>Nazwisko:</h4>
+      <input type="text" id="nazwisko" name="nazwisko"required ><br>
+  
+    <h4>Email:</h4>
+      <input type="text" id="email" name="email" required><br><br>
+  
+      
+  
+     
+      <br><br>
+    </form> 
+     
+  
+      <input type="button" class="button" value="Zamów bilety" onclick="fun1()"><br><br> 
+      <p id="p2"></p>
+     
+      <script> 
+      function fun(){
+  var b1=document.getElementById("ilosc_biletow1").value;
+  var b2=document.getElementById("ilosc_biletow2").value;
+  var b3=document.getElementById("ilosc_biletow3").value;
+  
+  var suma=Math.ceil(((b1*149.99)+(b2*159.99)+(b3*89.99))*100)/100;
+  document.getElementById("p1").innerHTML="Koszyk: "+suma+" zł";
+  if(b1>0){document.getElementById("p1").innerHTML+="<br>Bilety jednodniowe: "+b1;}
+  if(b2>0){document.getElementById("p1").innerHTML+="<br>Bilety prezentowe: "+b2;}
+  if(b3>0){document.getElementById("p1").innerHTML+="<br>Bilety ulogowe: "+b3;}
+      }
+      function fun1(){
+var imi=document.getElementById("imie").value;
+var nazw=document.getElementById("nazwisko").value;
+var em=document.getElementById("email").value;
+document.getElementById("p2").innerHTML="Wysłaliśmy na twój email: "+em+" potwierdzenie zakupu<br>Dziękujemy za zakup i życzymy miłej zabawy";
+      }
+      </script>
